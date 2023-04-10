@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iCONS</title>
+    <!-- FONTAWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <h1 class="main-title">FontIcons</h1>
+        </header>
+        <div class="jumbo">
+            <div class="selection">
+                <h2>FILTRA PER TIPO</h2>
+                <select name="" id="" v-model="filter">
+                    <option value="all">All</option>
+                    <option value="animal">Animal</option>
+                    <option value="vegetable">Vegetables</option>
+                    <option value="user">Uman</option>
+                </select>
+            </div>
+        </div>
+        <main>
+            <div class="container">
+                <div class="cont" v-for="single in group" :class="single.type" v-show="single.type == filter || filter == 'all'">
+                    <div class="content" >
+                        <i class="fa-solid" :class="single.prefix + single.name, single.color"></i>
+                        <h3>{{single.name}}</h3>
+                    </div>
+                </div>
+               
+            </div>
+
+        </main>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
